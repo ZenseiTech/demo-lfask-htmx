@@ -1198,10 +1198,10 @@ var htmx = htmx || (function () {
                 this.getResponseHeader("X-HX-Trigger") : null;
                 handleTrigger(elt, hxTrigger );
 
-                var pushedUrl = (this.getAllResponseHeaders().indexOf("X-HX-Push") >= 0 ) ? 
+                var pushedUrl = (this.getAllResponseHeaders().indexOf("X-HX-Push") >= 0 ) ?
                 this.getResponseHeader("X-HX-Push") : null ;
 
-                
+
                 var shouldSaveHistory = shouldPush(elt) || pushedUrl;
 
                 if (this.status >= 200 && this.status < 400) {
@@ -1278,7 +1278,7 @@ var htmx = htmx || (function () {
         }
         if(!triggerEvent(elt, 'beforeRequest.htmx', eventDetail)) return endRequestLock();
         addRequestIndicatorClasses(elt);
-       
+
         if (urlSpec.encoding == "json") {
             xhr.send(JSON.stringify(filteredParameters));
         } else {
