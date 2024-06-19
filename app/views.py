@@ -1,4 +1,6 @@
 """Create the views of the application."""
+import logging as logger
+
 from flask import render_template, request
 
 from app import app, db
@@ -73,6 +75,7 @@ def submit():
     author_name = request.form["author"]
 
     author = db.session.query(Author).filter(Author.name == author_name).first()
+    logger.debug(author)
 
     # check if author already exists in db
     if author:
