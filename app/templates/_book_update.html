@@ -1,0 +1,16 @@
+<tr>
+    <td>{{book.title}}</td>
+    <td>{{author.name}}</td>
+    <td>
+        <button class="btn btn-primary"
+            hx-get="/get-edit-form/{{book.book_id}}">
+            Edit Title
+        </button>
+    </td>
+    <td>
+        <button hx-delete="/delete/{{book.book_id}}"
+            class="btn btn-primary">
+            Delete
+        </button>
+    </td>
+</tr>

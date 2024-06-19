@@ -1,0 +1,12 @@
+<tr hx-trigger='cancel' class='editing' hx-get="/get-book-row/{{book.book_id}}">
+    <td><input name="title" value="{{book.title}}"/></td>
+    <td>{{author.name}}</td>
+    <td>
+      <button class="btn btn-primary" hx-get="/get-book-row/{{book.book_id}}">
+        Cancel
+      </button>
+      <button class="btn btn-primary" hx-put="/update/{{book.book_id}}" hx-include="closest tr">
+        Save
+      </button>
+    </td>
+  </tr>
